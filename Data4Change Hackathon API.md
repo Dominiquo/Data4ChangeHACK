@@ -18,23 +18,51 @@ The files are sorted into folders and subfolders. Each subfolder contains severa
 
 Therefore, we have a clear tree structure. Each `folder` has `subfolders` and each `subfolder` has `files`.
 
+### `folder`
+- String indicating the available folder names
+
+### `subfolder`
+- String indicating the available subfolder names for a given folder 
+
+### `file`
+- `package_name`: 
+- `format`: 
+- `url`:
+- `filename`: 
+- `folder_name`:
+- `subfolder_name`:
+- `id`:
+
 # `GET`  /list_folders
 Parameters:
  - None
 
 Returns: 
- - JSON: ```{'data': [Folder1, Folder2, .., FolderN]}```
+ - JSON: ```{'folders': [Folder1, Folder2, .., FolderN]}```
 
 # `GET` /list_subfolders
 Parameters:
- - fields: `{'folder': '<Folder1>'}`
+ - fields: `{'folder': '<Folder1 String>'}`
 
 Returns: 
  - JSON: ```{'data': [SubFolder1, SubFolder2, .., SubFolderN]}```
 
 # `GET` /get_files
 Parameters:
- - fields: `{'folder': '<Folder1>'}`
+ - `folder`: zero to multiple folder strings seperated by commas (NO spaces)
+ - `subfolder`: zero to multiple subfolder strings seperated by commas (NO spaces)
+ - `format`: zero or more format types serarated by commas (may be one of listed string values: `['csv', 'xlsx', 'txt', 'pdf', 'jpg']`)
 
 Returns: 
- - JSON: ```{'data': [SubFolder1, SubFolder2, .., SubFolderN]}```
+JSON: 
+```
+ {'files': [file1, File1, ..., FileN],
+     'file_count': int_val
+ }
+ ```
+ 
+ # `GET` /get_file_by_id
+ Parameters:
+ - `id`: file id string that can be found when calling files via `get_files`
+ Returns:
+- single `file` object
