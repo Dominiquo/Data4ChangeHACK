@@ -5,6 +5,8 @@ This is a simple REST API to get relevant Township development indicator informa
 
 # BASE URL: `http://data4changehack.us-east-1.elasticbeanstalk.com`
 
+#### Recommendation: user d3 csv to read in the data https://riptutorial.com/d3-js/example/18426/loading-data-from-csv-files
+
 The files are sorted into folders and subfolders. Each subfolder contains several files. Here is an example of the first folder to the first leaves (files):
 ```
 +-- 01_Development/
@@ -68,3 +70,6 @@ JSON:
  - `id`: file id string that can be found when calling files via `get_files`
  Returns:
 - single `file` object
+
+
+
