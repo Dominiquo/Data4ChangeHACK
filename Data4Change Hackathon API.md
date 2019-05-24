@@ -45,7 +45,7 @@ Parameters:
  - fields: `{'folder': '<Folder1 String>'}`
 
 Returns: 
- - JSON: ```{'data': [SubFolder1, SubFolder2, .., SubFolderN]}```
+ - JSON: ```{'parent_folder': '<Folder1 String>', 'subfolders':['subfolder1', 'subfolder2', .., 'subfolderN']}```
 
 # `GET` /get_files
 Parameters:
