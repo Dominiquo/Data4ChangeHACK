@@ -49,7 +49,7 @@ Parameters:
 Returns: 
  - JSON: ```{'parent_folder': '<Folder1 String>', 'subfolders':['subfolder1', 'subfolder2', .., 'subfolderN']}```
 
-# `GET` /get_files
+# `GET` /list_files
 Parameters:
  - `folder`: zero to multiple folder strings seperated by commas (NO spaces)
  - `subfolder`: zero to multiple subfolder strings seperated by commas (NO spaces)
